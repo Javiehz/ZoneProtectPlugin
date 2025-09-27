@@ -8,6 +8,7 @@ import org.bukkit.event.block.BlockPlaceEvent;
 
 public class BlockListener implements Listener {
 
+    @EventHandler
     public void onBlockBuild(BlockPlaceEvent event){
         Player player = event.getPlayer();
         player.sendMessage("INFO :: HAS CONSTRUIDO UN BLOQUE.");
