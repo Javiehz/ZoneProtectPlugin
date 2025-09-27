@@ -7,6 +7,7 @@ import org.bukkit.event.block.BlockBreakEvent;
 
 public class BlockListener implements Listener {
 
+
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event){
         Player player = event.getPlayer();
