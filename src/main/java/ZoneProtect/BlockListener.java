@@ -36,8 +36,10 @@ public class BlockListener implements Listener {
 
     @EventHandler
     public void onBlockBuild(BlockPlaceEvent event){
+        Player player = event.getPlayer();
+        if(player.isOp()) return;
+
         if(insideProtectedZone(event.getBlock().getLocation())){
-            Player player = event.getPlayer();
             event.setCancelled(true);
             player.sendMessage("§cZona protegida: no puedes destruir bloques aquí.");
         }
@@ -45,8 +47,10 @@ public class BlockListener implements Listener {
 
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event){
+        Player player = event.getPlayer();
+        if(player.isOp()) return;
+
         if(insideProtectedZone(event.getPlayer().getLocation())){
-            Player player = event.getPlayer();
             event.setCancelled(true);
             player.sendMessage("§cZona protegida: no puedes construir bloques aquí.");
         }
